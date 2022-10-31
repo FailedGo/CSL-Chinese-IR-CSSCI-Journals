@@ -400,7 +400,7 @@
                     <date form="text" variable="accessed" suffix=""/>
                 </group>
             </else-if>
-            <else-if type="paper-conference" match="any"> <!--中文会议论文-->
+            <else-if type="paper-conference" match="any"> <!--中文会议论文及会议论文集析出文献-->
                 <text macro="author" suffix="："/>
                 <choose>
                     <if variable="locator"> <!--如果有自定义页码，调用-->
@@ -417,7 +417,9 @@
                         <group delimiter="，">
                             <text variable="title" prefix="《" suffix="》"/>
                             <text variable="event"/>
+                             <text variable="container-title" prefix="《" suffix="》"/>
                             <text variable="event-place"/>
+                            <text variable="publisher"/>
                             <date date-parts="year-month-date" form="text" variable="issued"/>
                         </group>
                         <text variable="page" prefix="，第" suffix="页"/>
